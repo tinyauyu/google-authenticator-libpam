@@ -1969,6 +1969,9 @@ static int google_authenticator(pam_handle_t *pamh,
         continue;
       }
 
+      // Remove line break
+      pw = pwstrtok(pw, "\n")
+
       // We are often dealing with a combined password and verification
       // code. Separate them now.
       const int pw_len = strlen(pw);
